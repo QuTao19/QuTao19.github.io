@@ -3,46 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人主页</title>
+    <title>项目介绍</title>
     <style>
-        body { font-family: sans-serif; margin: 20px; }
-        /* 可以根据需要调整嵌入的iframe样式 */
-        .slide-embed {
-            margin: 20px auto;
-            /* 建议设置一个具体的宽度和高度，或者使用下面的响应式方法 */
-            /* max-width: 800px; /* 例如，如果想限制最大宽度 */
+        /* 基本页面样式 */
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            margin: 0; 
+            padding: 20px; 
+            background-color: #f0f2f5; /* 淡雅的背景色 */
+            color: #333; /* 深灰色文字，易于阅读 */
+            line-height: 1.6;
         }
 
-        /* 如果希望iframe响应式 (推荐) */
+        /* 页面主要内容容器 */
+        .content-wrapper {
+            max-width: 1000px; /* 页面内容的最大宽度 */
+            margin: 0 auto; /* 页面居中 */
+            padding: 20px;
+            background-color: #ffffff; /* 内容区域白色背景 */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* 细微的阴影增加层次感 */
+            border-radius: 8px; /* 圆角 */
+        }
+
+        h1, h2 { 
+            text-align: center; 
+            color: #1a73e8; /* 标题使用品牌蓝色调 */
+        }
+        h1 {
+            margin-bottom: 0.5em;
+        }
+        h2 {
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            font-size: 1.8em;
+        }
+
+        p.intro { 
+            text-align: center; 
+            font-size: 1.1em;
+            color: #5f6368; /* 副标题/介绍文字颜色 */
+            margin-bottom: 2em;
+        }
+
+        /* 响应式iframe容器的样式 */
         .responsive-iframe-container {
-            position: relative;
-            overflow: hidden;
-            padding-top: 56.25%; /* 16:9 宽高比 (height/width * 100). 对于 4:3 用 75% */
-                                /* 你可以根据你的PPT原始宽高比调整这个值 */
-            margin: 20px auto;
-            max-width: 800px; /* 控制最大宽度 */
-            border: 1px solid #ccc; /* 可选的边框 */
+            position: relative;    /* 为内部绝对定位的iframe提供基准 */
+            overflow: hidden;      /* 确保超出部分被隐藏 */
+            width: 100%;           /* 容器宽度占满其父元素 */
+            max-width: 900px;      /* PPT显示的最大宽度，避免在大屏幕上过宽 */
+            margin: 30px auto;     /* 上下边距，并使其在父容器中居中 */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 给iframe容器也加上一点阴影 */
+            border-radius: 6px; /* 轻微圆角 */
+        }
+
+        /* 16:9 宽高比 (最常见) */
+        .responsive-iframe-container.aspect-ratio-16-9 {
+            padding-top: 56.25%; /* (高度 / 宽度) = (9 / 16) * 100% */
+        }
+
+        /* 4:3 宽高比 (如果需要) */
+        .responsive-iframe-container.aspect-ratio-4-3 {
+            padding-top: 75%;    /* (高度 / 宽度) = (3 / 4) * 100% */
         }
 
         .responsive-iframe-container iframe {
-            position: absolute;
+            position: absolute;    /* 使iframe填充父容器 */
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+            width: 100%;           /* 宽度占满父容器 */
+            height: 100%;          /* 高度占满父容器 */
+            border: 0;             /* 移除iframe默认边框 */
         }
+
+        /* 页脚链接样式 */
+        .footer-link {
+            display: block; /* 让链接独占一行，方便点击 */
+            text-align: center; 
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #5f6368;
+        }
+        .footer-link a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .footer-link a:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
-    <h1>欢迎来到我的主页</h1>
-    <p>这里展示了我的一个PPT演示：</p>
+    <div class="content-wrapper">        
+        <div class="responsive-iframe-container aspect-ratio-16-9">
+            <iframe 
+                src="https://qutao-my.sharepoint.com/personal/qutao_qutao_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc={abee7108-df11-4a15-bc25-8755d8663186}&amp;action=embedview&amp;wdAr=1.7777777777777777&amp;wdEaaCheck=1" 
+                allowfullscreen="true" 
+                mozallowfullscreen="true" 
+                webkitallowfullscreen="true"
+                title="我的演示文稿">
+                您的浏览器不支持嵌入式框架，或者当前配置阻止了它们显示。
+                <a target="_blank" href="https://qutao-my.sharepoint.com/personal/qutao_qutao_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc={abee7108-df11-4a15-bc25-8755d8663186}&amp;action=view">请点击此处直接查看演示文稿</a>。
+            </iframe>
+        </div>
 
-    <h2>演示文稿 (OneDrive/SharePoint 嵌入)</h2>
-    
-    <div class="responsive-iframe-container">
-        <iframe src="https://qutao-my.sharepoint.com/personal/qutao_qutao_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc={abee7108-df11-4a15-bc25-8755d8663186}&amp;action=embedview&amp;wdAr=1.7777777777777777&amp;wdEaaCheck=1" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+        <p class="footer-link">
+            如果嵌入内容无法正常显示，您可以 
+            <a target="_blank" href="https://qutao-my.sharepoint.com/personal/qutao_qutao_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc={abee7108-df11-4a15-bc25-8755d8663186}&amp;action=view">点击此处直接查看演示文稿</a>。
+        </p>
     </div>
-
 </body>
 </html>
