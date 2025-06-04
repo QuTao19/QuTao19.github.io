@@ -9,8 +9,28 @@
         /* 可以根据需要调整嵌入的iframe样式 */
         .slide-embed {
             margin: 20px auto;
-            max-width: 800px; /* 根据你的幻灯片服务推荐调整 */
-            <iframe src="https://qutao-my.sharepoint.com/personal/qutao_qutao_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc={abee7108-df11-4a15-bc25-8755d8663186}&amp;action=embedview&amp;wdAr=1.7777777777777777&amp;wdEaaCheck=1" width="476px" height="288px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+            /* 建议设置一个具体的宽度和高度，或者使用下面的响应式方法 */
+            /* max-width: 800px; /* 例如，如果想限制最大宽度 */
+        }
+
+        /* 如果希望iframe响应式 (推荐) */
+        .responsive-iframe-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 宽高比 (height/width * 100). 对于 4:3 用 75% */
+                                /* 你可以根据你的PPT原始宽高比调整这个值 */
+            margin: 20px auto;
+            max-width: 800px; /* 控制最大宽度 */
+            border: 1px solid #ccc; /* 可选的边框 */
+        }
+
+        .responsive-iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
     </style>
 </head>
@@ -18,9 +38,11 @@
     <h1>欢迎来到我的主页</h1>
     <p>这里展示了我的一个PPT演示：</p>
 
-    <h2>演示文稿 (Google Slides 嵌入)</h2>
-    <div class="slide-embed">
-        </div>
+    <h2>演示文稿 (OneDrive/SharePoint 嵌入)</h2>
+    
+    <div class="responsive-iframe-container">
+        <iframe src="https://qutao-my.sharepoint.com/personal/qutao_qutao_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc={abee7108-df11-4a15-bc25-8755d8663186}&amp;action=embedview&amp;wdAr=1.7777777777777777&amp;wdEaaCheck=1" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+    </div>
 
 </body>
 </html>
