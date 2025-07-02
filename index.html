@@ -1,116 +1,503 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
+  <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>项目介绍</title>
-    <style>
-        /* 基本页面样式 */
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            margin: 0; 
-            padding: 20px; 
-            background-color: #f0f2f5; /* 淡雅的背景色 */
-            color: #333; /* 深灰色文字，易于阅读 */
-            line-height: 1.6;
-        }
+    <meta name="pubdate" content="20250420">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="www.qutao.pics">
+    <meta name="description" content="www.qutao.picsg">
+    <base href="" target="_blank">
+    <title>曲涛的简历</title>
+    
+    <style type="text/css">
+    /* 全局样式 */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
 
-        /* 页面主要内容容器 */
-        .content-wrapper {
-            max-width: 1000px; /* 页面内容的最大宽度 */
-            margin: 0 auto; /* 页面居中 */
-            padding: 20px;
-            background-color: #ffffff; /* 内容区域白色背景 */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* 细微的阴影增加层次感 */
-            border-radius: 8px; /* 圆角 */
-        }
+    .title {
+      font-family: Arial, Helvetica, sans-serif; 
+      font-size: medium;
+    }
+    
+    .sectionHead {
+      font-family: "Microsoft YaHei", Arial, sans-serif;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: left;
+      padding: 8px;
+    }
 
-        h1, h2 { 
-            text-align: center; 
-            color: #1a73e8; /* 标题使用品牌蓝色调 */
-        }
-        h1 {
-            margin-bottom: 0.5em;
-        }
-        h2 {
-            margin-top: 1.5em;
-            margin-bottom: 0.8em;
-            font-size: 1.8em;
-        }
+    .ProjectHead {
+      font-family: "Microsoft YaHei", Arial, sans-serif;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-align: left;
+      color: rgb(37, 89, 154);
+    }
 
-        p.intro { 
-            text-align: center; 
-            font-size: 1.1em;
-            color: #5f6368; /* 副标题/介绍文字颜色 */
-            margin-bottom: 2em;
-        }
+    .ClassHead {
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: left;
+    }
 
-        /* 响应式iframe容器的样式 */
-        .responsive-iframe-container {
-            position: relative;    /* 为内部绝对定位的iframe提供基准 */
-            overflow: hidden;      /* 确保超出部分被隐藏 */
-            width: 100%;           /* 容器宽度占满其父元素 */
-            max-width: 900px;      /* PPT显示的最大宽度，避免在大屏幕上过宽 */
-            margin: 30px auto;     /* 上下边距，并使其在父容器中居中 */
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 给iframe容器也加上一点阴影 */
-            border-radius: 6px; /* 轻微圆角 */
-        }
+    .indent-content {
+      margin-left: 1em;  /* 约等于4个中文字符 */
+    }
 
-        /* 16:9 宽高比 (最常见) */
-        .responsive-iframe-container.aspect-ratio-16-9 {
-            padding-top: 56.25%; /* (高度 / 宽度) = (9 / 16) * 100% */
-        }
+    .hanging-indent {
+      padding-left: 2em;     /* 整个段落左侧缩进2em */
+      text-indent: -2em;      /* 第一行向左回缩2em，抵消padding效果 */
+      margin-bottom: 0.5rem;
+    }
 
-        /* 4:3 宽高比 (如果需要) */
-        .responsive-iframe-container.aspect-ratio-4-3 {
-            padding-top: 75%;    /* (高度 / 宽度) = (3 / 4) * 100% */
-        }
+    .style7 {
+      font-weight: bold;
+    }
 
-        .responsive-iframe-container iframe {
-            position: absolute;    /* 使iframe填充父容器 */
-            top: 0;
-            left: 0;
-            width: 100%;           /* 宽度占满父容器 */
-            height: 100%;          /* 高度占满父容器 */
-            border: 0;             /* 移除iframe默认边框 */
-        }
+    .body {
+      font-family: "Times New Roman", SimSun, serif; 
+      font-size: 1rem; 
+      line-height: 1.5;
+    }
 
-        /* 页脚链接样式 */
-        .footer-link {
-            display: block; /* 让链接独占一行，方便点击 */
-            text-align: center; 
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #5f6368;
-        }
-        .footer-link a {
-            color: #1a73e8;
-            text-decoration: none;
-        }
-        .footer-link a:hover {
-            text-decoration: underline;
-        }
+    /* 图片响应式处理 */
+    img {
+      max-width: 95%;
+      height: auto;
+    }
 
+    /* 表格基础样式 */
+    table {
+      border-collapse: collapse;
+      width: 95%;
+      margin: 0 auto 15px auto;
+    }
+
+    /* 容器样式 */
+    .section-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto 15px auto;
+      clear: both;
+      padding: 0;
+    }
+
+    .section-container table {
+        width: 100%;
+        margin: 0;  /* 移除表格自带的边距 */
+    }
+
+    /* 消息样式 */
+    .message {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      width: 100%;
+      gap: 10px;
+    }
+
+    /* 对齐布局类 */
+    .left {
+      width: 20%;
+      text-align: left;
+    }
+    
+    .center {
+      width: 35%;
+      text-align: center;
+    }
+
+    .right {
+      width: 20%;
+      text-align: right;
+    }
+
+    /* 颜色类 */
+    .white-text {
+      color: white;
+    }
+
+    .blue-text {
+      color: rgb(37, 89, 154);
+    }
+
+    /* 小号文字 */
+    .smallBody {
+      font-family: Arial, Helvetica, sans-serif; 
+      font-size: 13.5px;
+      text-align: left;
+    }
+
+    /* 平板端样式 */
+    @media screen and (max-width: 768px) {
+      .body {
+        font-size: 0.9rem;
+      }
+      
+      .sectionHead {
+        font-size: 1.1rem;
+      }
+      
+      .message {
+        gap: 5px;
+      }
+      
+      img[src*="qutao.jpg"], img[src*="uestc.svg"] {
+        max-width: 80px;
+        height: auto;
+      }
+    }
+
+    /* 手机端样式 */
+    @media screen and (max-width: 480px) {
+      .body {
+        font-size: 0.85rem;
+      }
+      
+      .sectionHead {
+        font-size: 1rem;
+        padding: 5px;
+      }
+      
+      .ProjectHead, .ClassHead {
+        font-size: 0.95rem;
+      }
+      
+      .message {
+        flex-direction: column;
+      }
+      
+      .left, .center, .right {
+        width: 95%;
+        text-align: left;
+        margin-bottom: 5px;
+      }
+      
+      img {
+        max-width: 70px;
+        height: auto;
+      }
+      
+      table {
+        width: 98% !important;
+      }
+
+      .hanging-indent {
+        padding-left: 1.5em;
+        text-indent: -1.5em;
+      }
+      
+      /* 在移动端上让姓名和求职意向上下排列 */
+      .header-info p[style*="display: flex"] {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+        /* Flexbox头部容器 */
+    .header-flex-container {
+        display: flex;
+        align-items: flex-start;  /* 改为顶部对齐 */
+        width: 100%;              /* 保持100%宽度占满父容器 */
+        margin: 0;
+        padding: 15px 0;
+        box-sizing: border-box;
+    }
+    
+    .header-photo {
+        width: 100px;
+        min-width: 100px;         /* 设置最小宽度 */
+        flex-shrink: 0;
+        padding-right: 15px;
+        margin-left: 0;         /* 确保无左边距 */
+    }
+    
+    .header-info {
+        flex-grow: 1;
+        flex-shrink: 1;
+        width: calc(100% - 100px);   /* 明确中间信息区域宽度 */
+    }
+    
+    /* 移动端适配 */
+    @media screen and (max-width: 480px) {
+        .header-flex-container {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .header-photo, .header-info {
+            width: 100%;         
+            min-width: auto;     
+            text-align: center;
+            margin-bottom: 10px;
+            padding: 0;          
+        }
+    }
     </style>
-</head>
-<body>
-    <div class="content-wrapper">        
-        <div class="responsive-iframe-container aspect-ratio-16-9">
-            <iframe 
-                src="https://qutao-my.sharepoint.com/personal/qutao_qutao_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc={abee7108-df11-4a15-bc25-8755d8663186}&amp;action=embedview&amp;wdAr=1.7777777777777777&amp;wdEaaCheck=1" 
-                allowfullscreen="true" 
-                mozallowfullscreen="true" 
-                webkitallowfullscreen="true"
-                title="我的演示文稿">
-                您的浏览器不支持嵌入式框架，或者当前配置阻止了它们显示。
-                <a target="_blank" href="https://qutao-my.sharepoint.com/personal/qutao_qutao_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc={abee7108-df11-4a15-bc25-8755d8663186}&amp;action=view">请点击此处直接查看演示文稿</a>。
-            </iframe>
+  </head>
+    
+  <body class="body">
+    <!-- 个人信息 -->
+    <div class="section-container">
+        <div class="header-flex-container">
+            <!-- 左侧头像 -->
+            <div class="header-photo">
+                <img src="image/qutao.jpg" width="100" height="137" alt="个人照片">
+            </div>
+            
+            <!-- 中间个人信息 -->
+            <div class="header-info">
+                <p style="display: flex; justify-content: space-between; align-items: center;">
+                    <span><span class="sectionHead"> 曲 </span> <span class="sectionHead">涛</span></span>
+                    <span class="sectionHead"> 求职意向：图像算法工程师</span>
+                </p>
+    
+                <div class="message">
+                    <div class="left"> ·性别：男  </div>
+                    <div class="left"> ·民族：汉族 &nbsp;&nbsp;&nbsp;&nbsp;·年龄：24</div>
+                    <div class="right"> ·政治面貌：共青团员</div>
+                </div>
+    
+                <div class="message">
+                    <div class="left"> ·微信：Qu_Tao_00</div>
+                    <div class="left"> 
+                        ·邮箱：<a href="mailto:qutao00@126.com">qutao00@126.com</a>
+                    </div>
+                    <div class="right"> ·家庭住址：四川绵阳</div>
+                </div>
+            </div>
         </div>
-
-        <p class="footer-link">
-            如果嵌入内容无法正常显示，您可以 
-            <a target="_blank" href="https://qutao-my.sharepoint.com/personal/qutao_qutao_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc={abee7108-df11-4a15-bc25-8755d8663186}&amp;action=view">点击此处直接查看演示文稿</a>。
-        </p>
     </div>
-</body>
+
+    <!-- 教育经历 -->
+    <div class="section-container">
+      <table border="0" width="100%">
+        <tbody>
+          <tr>
+            <td class="sectionHead white-text" style="background-color: rgb(37, 89, 154)"> 教育经历</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="message" style="margin-top: 10px;">
+                <div class="left ClassHead">2023.09-2026.06</div>
+                <div class="left ClassHead">电子科技大学</div>
+                <div class="center ClassHead">光学工程</div>
+                <div class="right ClassHead">工学硕士</div>
+              </div>
+
+              <div class="message">
+                <div class="left ClassHead">2019.09-2023.06</div>
+                <div class="left ClassHead">成都理工大学</div>
+                <div class="center ClassHead">电气工程及其自动化</div>
+                <div class="right ClassHead">工学学士</div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 实习经历 -->
+    <div class="section-container">
+      <table border="0" width="100%">
+        <tbody>
+          <tr>
+            <td class="sectionHead white-text" style="background-color: rgb(37, 89, 154);"> 实习经历</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="message" style="margin-top: 10px;">
+                <div class="left ClassHead">2024.06-2025.06</div>
+                <div class="center ClassHead">成都鼎屹信息技术有限公司</div>
+                <div class="right ClassHead">图像算法/软件工程师</div>
+              </div>
+
+              <!-- 项目1 -->
+              <div class="message" style="margin-top: 15px;">
+                <div class="ProjectHead" style="width: 100%;">项目1：单目手持热成像智能望远镜(已批量生产)</div>
+              </div>
+              <p style="margin-top: 10px;">
+                <span class="ClassHead">项目介绍：</span>面向户外运动市场用于夜间观测的手持式红外热成像望远镜，具有低功耗、高帧频等特点，同时还有连续数字变焦、智能跟踪识别、场景模式、电子防抖等特色功能。
+              </p>
+              <p class="hanging-indent">
+                <span class="ClassHead">1.</span><span class="ClassHead indent-content">跟踪/识别算法部署，</span>部署YOLO识别模型及KCF目标跟踪算法，通过线程调度优化及动态NPU调频技术，将跟踪/识别耗时稳定在45ms/33ms以内（原50~100ms不稳定波动）；
+              </p>
+              <p class="hanging-indent">
+                <span class="ClassHead">2.</span><span class="ClassHead indent-content">自适应热点检测算法，</span>引入降采样处理与搜索区域动态调整机制，解决某些场景下热点跳变问题；
+              </p>
+              <p class="hanging-indent">
+                <span class="ClassHead">3.</span><span class="ClassHead indent-content">红外伪彩处理与优化，</span>采用NEON指令集加速及多线程处理优化，实现算法耗时从50ms到3ms内的数十倍性能提升；
+              </p>
+              <p class="hanging-indent">
+                <span class="ClassHead">4.</span><span class="ClassHead indent-content">视频流架构设计，</span>采用单通道获取图像数据、多线程处理并设置优先级方式将实时帧率提升约60%（30→50fps）；
+              </p>
+              <p class="hanging-indent">
+                <span class="ClassHead">5.</span><span class="ClassHead indent-content"></span>全部UI界面设计、全流程Linux应用程序及部分驱动程序开发。
+              </p>
+
+              <!-- 项目2 -->
+              <div class="message" style="margin-top: 15px;">
+                <div class="ProjectHead" style="width: 100%;">项目2：非制冷红外热成像机芯</div>
+              </div>
+              <p style="margin-top: 10px;">
+                <span class="ClassHead">项目介绍：</span>小型非制冷红外机芯，具有低功耗、小型化等特点，具备多种测温方式及多种视频输出方式。
+              </p>
+              <p class="hanging-indent">
+                <span class="ClassHead">1.</span><span class="ClassHead indent-content">红外图像增强算法，</span>负责图像锐化增强部分，采用双引导滤波的方式实现图像降噪和锐化，根据不同批次探测器特性采用分段线性函数动态调整锐化区间和强度并配合FPGA实现；
+              </p>
+              <p class="hanging-indent">
+                <span class="ClassHead">1.</span><span class="ClassHead indent-content">非标协议DVP摄像头驱动，</span>针对探测器非标格式修改底层驱动，实现8bit/14bit原始数据传输，带宽从148.5MHz降低至27MHz并在硬件上减少8根数据线，极大降低了功耗与PCB布线复杂度，同时该方案也在望远镜上采用；
+              </p>
+              <p class="hanging-indent">
+                <span class="ClassHead">2.</span><span class="ClassHead indent-content">平台性能评估测试，</span>针对机芯功能全开启后视频帧率下降问题，从CPU频率，内存频率、带宽、容量等方面采用性能分析工具perf、RK内存测试工具进行性能评估测试，并根据测试结果给出硬件改版设计参考。
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 项目经历 -->
+    <div class="section-container">
+      <table border="0" width="100%">
+        <tbody>
+          <tr>
+            <td class="sectionHead white-text" style="background-color: rgb(37, 89, 154);"> 项目经历</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="message" style="margin-top: 10px;">
+                <div class="left ProjectHead">2025.01-至今</div>
+                <div class="center ProjectHead">实时红外电子稳像技术研究</div>
+                <div class="right ProjectHead">毕业课题</div>
+              </div>
+              
+              <p style="margin-top: 10px;">
+                <span class="ClassHead">项目介绍：</span>针对手持式红外热像设备图像抖动问题，开发实时电子稳像算法，降低画面抖动，提升图像观感。
+              </p>
+              <p class="hanging-indent">
+                <span class="ClassHead">1.</span><span class="ClassHead indent-content">运动估计</span>采用分区方式进行特征点匹配并计算光流、结合IMU姿态角针对大幅度剧烈运动进行轨迹动态补偿；
+              </p>
+              <p class="hanging-indent">
+                <span class="ClassHead">2.</span><span class="ClassHead indent-content">轨迹平滑</span>采用自适应卡尔曼滤波对运动轨迹进行平滑实现在线稳像，引入类sigmoid函数根据当前帧绝对位移及黑边比例调节卡尔曼滤波参数以适应主动位移与被动抖动；
+              </p>
+              <p class="hanging-indent">
+                <span class="ClassHead">3.</span><span class="ClassHead indent-content">性能优化</span>通过分区多线程和单通道（Y）处理在1920x1080分辨率下可达30FPS+（Quad-core ARM Cortex-A53）。
+              </p>
+
+              <div class="message" style="margin-top: 15px;">
+                <div class="left ProjectHead">2024.01-2024.05</div>
+                <div class="center ProjectHead">双光望远镜低照度摄像头图像调优（ISP Tuning）</div>
+                <div class="right ProjectHead">项目负责人</div>
+              </div>
+              <p style="margin-top: 10px;">
+                <span class="ClassHead">项目介绍：</span>调试星光级传感器及ISP，使图像曝光合理、色彩准确、画面通透且噪声尽量小，显示延时低。
+              </p>
+              <p class="hanging-indent">
+                <span class="ClassHead">1.</span><span class="indent-content">调试星光级传感器ISP，完整调试SC2210、OS04A10两款Sensor，熟悉ISP Pipeline全流程；</span>
+              </p>
+              <p class="hanging-indent">
+                <span class="ClassHead">2.</span><span class="indent-content">调试完成的Sensor白平衡准确、曝光准确、暗光环境下(0.005Lux)噪声低，色彩准确、画面无畸变。</span>
+              </p>
+
+              <div class="message" style="margin-top: 15px;">
+                <div class="left ProjectHead">2024.01-2024.05</div>
+                <div class="center ProjectHead">低串扰低噪声四象限探测器信号放大电路设计</div>
+                <div class="right ProjectHead">国家重点研发计划</div>
+              </div>
+              <p style="margin-top: 10px;">
+                <span class="ClassHead">项目介绍：</span>设计黑硅四象限探测器并针对该探测器设计信号放大电路用于引力波探测。
+              </p>
+              <p class="hanging-indent">
+                <span class="ClassHead">1.</span><span class="indent-content">设计四象限探测器跨阻放大电路及脉冲信号展宽电路，将脉宽20ns、赋值10μA的电流信号放大至800ns、3V以上；</span>
+              </p>
+              <p class="hanging-indent">
+                <span class="ClassHead">2.</span><span class="indent-content">完成硬件电路的PCB绘制及后期电路测试且均达到设计参数要求。</span>
+              </p>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 专业技能 -->
+    <div class="section-container">
+      <table border="0" width="100%">
+        <tbody>
+          <tr>
+            <td class="sectionHead white-text" style="background-color: rgb(37, 89, 154);"> 专业技能</td>
+          </tr>
+          <tr>
+            <td>
+              <p style="margin-top: 10px;">
+                <span>CET-4、NCRE-4（网络工程师），具备网站建设及网络信息化管理能力，熟练掌握C/C++、Matlab编程语言</span>
+              </p>
+              <p style="margin-top: 5px;">
+                <span>熟练掌握基于Linux系统的嵌入式ARM驱动开发及摄像头应用开发，STC51、STM32单片机开发，了解V4L2架构</span>
+              </p>
+              <p style="margin-top: 5px;">
+                <span>熟练掌握ISP Pipeline各模块原理，CMOS传感器的成像原理，图像处理基础算法及OpenCV库的应用</span>
+              </p>
+              <p style="margin-top: 5px;">
+                <span>熟练掌握Altium Designer，Cadence等硬件设计软件，具备基础硬件电路设计、工业物联网开发经验</span>
+              </p>
+              <p style="margin-top: 5px;">
+                <span>熟练掌握Photoshop、Illustrator，具备独立的UI设计、海报设计、摄影后期能力，爱好摄影、骑行、羽毛球</span>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 荣誉奖项 -->
+    <div class="section-container">
+      <table border="0" width="100%">
+        <tbody>
+          <tr>
+            <td class="sectionHead white-text" style="background-color: rgb(37, 89, 154);"> 荣誉奖项</td>
+          </tr>
+          <tr>
+            <td>
+              <p style="margin-top: 10px;">
+                <span class="ClassHead">2022年第十六届"西门子杯"中国智能制造挑战赛全国总决赛特等奖(逻辑算法赛项，全国第4名、前0.3%)</span>
+              </p>
+              <p style="margin-top: 5px;">
+                <span>2021年第十五届"西门子杯"中国智能制造挑战赛全国总决赛二等奖(工业自动化赛项)</span>
+              </p>
+              <p style="margin-top: 5px;">
+                <span class="ClassHead">
+                    <a href="https://www.jxfls.com/detail/100837" target="_blank"></a>2019年四川省优质教育促进会首届川蜀模范学子—科技创新突出成果奖</a>(6万元奖学金，全省仅12人)
+                </span>
+              </p>
+              <p style="margin-top: 5px;">
+                <span>电子科技大学二等奖学金，成都理工大学荣誉学士、优秀毕业生、校一等奖学金1次、二等奖学金2次</span>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="section-container">
+      <table border="0" width="100%" class="smallBody">
+        <tbody>
+          <tr>
+           <td class="style7">Last Update: 2025.04. &nbsp;&nbsp;&nbsp;@2025.   All Rights Reserved.</td>
+         </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
 </html>
